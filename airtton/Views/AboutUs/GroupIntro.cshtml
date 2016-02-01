@@ -1,0 +1,26 @@
+﻿@model airtton.ViewModel.GroupIntroSummaryViewModel
+
+@{
+    ViewBag.Title = "GroupIntro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <!--=== Breadcrumbs ===-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <h1 class="pull-left">Group Introduction</h1>
+            <ul class="pull-right breadcrumb">
+                <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                <li><a href="@Url.Action("GroupIntro","AboutUs")">About Us</a></li>
+                <li class="active">@Model.Title</li>
+            </ul>
+        </div>
+    </div>
+    <!--=== End Breadcrumbs ===-->
+    <!--=== Content Part ===-->
+    <div class="container content">
+        <div class="row-fluid privacy">
+            <p>@Model.Description</p>
+        </div><!--/row-fluid-->
+    </div>
+    <!--=== End Content Part ===-->

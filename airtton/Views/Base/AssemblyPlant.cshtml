@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "AssemblyPlant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Assembly Plant</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li><a href="@Url.Action("AssemblyPlant", "Base")">Base</a></li>
+            <li class="active">Assembly Plant</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part 1 ===-->
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="title-v2">OUR PLANT</h2>
+            <p>Founded in 2010, mainly produces low-voltage distribution cabinet assembly, power distribution boxes.</p><br>
+        </div>
+        <div class="col-md-6">
+            <div id="myCarousel" class="carousel slide carousel-v1">
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img src="~/assets/img/clients1/Base/AssemblyPlant/Assembly-1.jpg" alt="">
+                    </div>
+                    <div class="item active">
+                        <img src="~/assets/img/clients1/Base/AssemblyPlant/Assembly-2.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="carousel-arrow">
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+<!--=== End Content Part 1 ===-->
+

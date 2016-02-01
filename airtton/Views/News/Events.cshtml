@@ -1,0 +1,87 @@
+﻿@model IEnumerable<airtton.ViewModel.EventsSummaryViewModel>
+
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">News</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li><a href="@Url.Action("Event", "News")">News</a></li>
+            <li class="active">Events</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!-- News Content -->
+<div class="container s-results margin-bottom-50 margin-top-20">
+    <div class="row">
+        <div class="col-md-2 hidden-xs related-search">
+            <div class="row">
+                <div class="col-md-12 col-sm-4">
+                    <h3>Jiuding News</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("Index", "News")">数控折弯机转让</a></li>
+                        <li><a href="@Url.Action("Index", "News")">九鼎新建研发楼开工仪式</a></li>
+                        <li><a href="@Url.Action("Index", "News")">配电箱配电柜3c认证</a></li>
+                        <li><a href="@Url.Action("Index", "News")">质量体系认证</a></li>
+                        <li><a href="@Url.Action("Index", "News")">北京九鼎通信设备有限公司党支部大会</a></li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 col-sm-4">
+                    <h3>Events</h3>
+                    <ul class="list-unstyled">
+                        @foreach (var item in Model)
+                        {
+                            <li><a href="@String.Format("#{0}",item.Id)"></a>@item.Title</li>
+                        }
+
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div><!--/col-md-2-->
+
+        <div class="col-md-10">
+            @foreach (var item in Model)
+            {
+            <!-- Begin Inner Results -->
+                <div id="@item.Id" class="inner-results">
+                    <h3>@item.Title</h3>
+                    @if (item.ImagePath != null)
+                    {
+                        <img src="@String.Format("/uploads/events/_0x{0}",@item.ImagePath)" alt="" />
+                    }
+                    <p></p>
+                    <p>@item.Content</p>
+                    <ul class="list-inline down-ul">
+                        <li>@item.CreateDate</li>
+                    </ul>
+                </div>
+
+                <hr>
+            }
+            <div class="margin-bottom-30"></div>
+
+            <div class="text-left">
+                <ul class="pagination">
+                    <li><a href="#">«</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">157</a></li>
+                    <li><a href="#">158</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div><!--/col-md-10-->
+    </div>
+</div>
+<!-- End News Content -->

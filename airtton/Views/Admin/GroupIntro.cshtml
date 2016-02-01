@@ -1,0 +1,33 @@
+﻿@model airtton.ViewModel.GroupIntroSummaryViewModel
+
+@{
+    ViewBag.Title = "GroupIntro";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="portlet box green col-md-11">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i> 公司介绍
+        </div>
+        <div class="actions">
+            <button class="btn btn-default btn-sm" id="group_intro_edit_btn" data-url="@Url.Action("EditGroupIntro", "Admin")">
+                <i class="fa fa-pencil"></i> Edit
+            </button>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form role="form" id="group_intro_portlet">
+           @Html.Partial("Partial/_GroupIntro", Model)
+        </form>
+    </div>
+    
+</div>
+
+
+
+<script src="~/assets/js/admin/jquery.min.js" type="text/javascript"></script>
+<script src="~/Content/Pages/Admin/handle-group-intro.js" type="text/javascript"></script>
+

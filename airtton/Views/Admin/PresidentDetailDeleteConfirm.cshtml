@@ -1,0 +1,80 @@
+﻿@model airtton.ViewModel.PresidentDetailEditViewModel
+
+@{
+    ViewBag.Title = "PresidentDetailDeleteConfirm";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>删除总裁致辞</title>
+</head>
+<body>
+    @using (Html.BeginForm("PresidentDetailDelete", "Admin", FormMethod.Post, new { @id = "PresidentForm" }))
+    {
+        @Html.Hidden("Id", Model.ID)
+        <h4>你确定要删除吗？</h4>
+        <div class="portlet box green col-md-11">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> 删除总裁致辞
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label>姓名</label>
+                            <input type="text" name="姓名" class="form-control input-lg" placeholder="姓名" value="@Model.Name">
+                        </div>
+                        <div class="form-group">
+                            <label>职位</label>
+                            <input type="text" name="职位" class="form-control input-lg" placeholder="职位" value="@Model.Position" />
+                        </div>
+                        <div class="form-group">
+                            <label>总裁致辞</label>
+                            <textarea class="form-control" name="描述" placeholder="描述" rows="8">@Model.Description</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Facebook</label>
+                            <input type="text" name="Facebook" class="form-control input-lg" placeholder="Facebook" value="@Model.Facebook" />
+                        </div>
+                        <div class="form-group">
+                            <label>Twitter</label>
+                            <input type="text" name="Twitter" class="form-control input-lg" placeholder="Twitter" value="@Model.Twitter" />
+                        </div>
+                        <div class="form-group">
+                            <label>Google</label>
+                            <input type="text" name="Google" class="form-control input-lg" placeholder="Google" value="@Model.Google" />
+                        </div>
+                        <div class="form-group">
+                            <label>LinkedIn</label>
+                            <input type="text" name="LinkedIn" class="form-control input-lg" placeholder="LinkedIn" value="@Model.LinkedIn" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="Email" class="form-control input-lg" placeholder="Email" value="@Model.Email" />
+                        </div>
+                        <div class="form-group">
+                            <label>Skype</label>
+                            <input type="text" name="Skype" class="form-control input-lg" placeholder="Skype" value="@Model.Skype" />
+                        </div>
+                    </div>
+
+                    <!--UPLOAD IMAGE START-->
+                    <!--UPLOAD IMAGE END-->
+
+
+                    <div class="form-actions right">
+                        <a href="@Url.Action("PresidentDetail","Admin")" class="btn default">取消</a>
+                        <button type="submit" class="btn green">删除</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</body>
+</html>

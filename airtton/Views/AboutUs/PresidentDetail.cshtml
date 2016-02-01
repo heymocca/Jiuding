@@ -1,0 +1,50 @@
+﻿@model airtton.ViewModel.PresidentDetailSummaryViewModel
+
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Message from the President</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li><a href="@Url.Action("Message","AboutUs")">About Us</a></li>
+            <li class="active">Message from the President</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+
+<!-- Message Block -->
+<div class="container content-sm">
+    <div class="row about-me">
+        <div class="col-sm-4 shadow-wrapper md-margin-bottom-40">
+            <div class="box-shadow shadow-effect-2">
+                <img class="img-responsive img-bordered full-width" src="~/assets/img/clients1/About/Message/President.jpg" alt="Message from the President">
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="overflow-h">
+                <div class="pull-left">
+                    <h2>@Model.Name</h2>
+                    <span>@Model.Position</span>
+                </div>
+                <ul class="social-icons pull-right">
+                    <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
+                    <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+                    <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
+                    <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+                </ul>
+            </div>
+            <p>@Model.Description</p>
+
+           
+        </div>
+    </div>
+</div>
+<!-- End Message Block -->

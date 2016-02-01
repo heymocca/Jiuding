@@ -1,0 +1,23 @@
+﻿@model airtton.ViewModel.GroupIntroSummaryViewModel
+
+@Html.Hidden("group_intro_id", Model.ID)
+
+
+<div class="form-body">
+    <div class="form-group">
+        <label>News Title</label>
+        <input type="text" id="new_title" name="Title" class="form-control input-lg" placeholder="新闻标题" value="@Model.Title">
+    </div>
+    <div class="form-group">
+        <label>News Content</label>
+        <textarea class="form-control" id="new_content" name="Content" placeholder="新闻内容" rows="18">@Model.Description</textarea>
+    </div>
+</div>
+
+<div class="form-actions right">
+    <a href="@Url.Action("GroupIntro","Admin")" class="btn default">取消</a>
+    <button id="group_intro_submit" class="btn green" data-url="@Url.Action("EditGroupIntroSubmit","Admin")">发布</button>
+</div>
+
+
+

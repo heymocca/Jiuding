@@ -1,0 +1,73 @@
+﻿@model airtton.ViewModel.NewsEditViewModel
+
+@{
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>删除新闻</title>
+</head>
+
+<body>
+    @using (Html.BeginForm("NewsDelete", "Admin", FormMethod.Post, new { @id = "newsForm" }))
+    {
+
+        @Html.Hidden("Id", Model.Id)
+        <h4>你确定要删除这条新闻吗？</h4>
+        <div class="portlet box green col-md-11">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> 删除新闻
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label>新闻标题</label>
+                            <input type="text" name="Title" class="form-control input-lg" value="@Model.Title" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>新闻内容</label>
+                            <textarea class="form-control" name="Content" placeholder="News Content" rows="10" readonly>@Model.Content</textarea>
+                        </div>
+                    </div>                   
+                    <div class="form-group col-md-12 margin-bottom-40">
+                        <h4 class="block">图片</h4>
+                        <div class="row">
+                            <div class="col-md-6 responsive-1024">
+                                @if (Model.ImagePath == null)
+                                {
+                                    <img src="~/assets/img/portfolio/19.jpg" id="demo3" alt="Jcrop Example" style="width:500px; height:auto;" />
+                                }
+                                else
+                                {
+                                    <img src="@String.Format("/uploads/news/_0x{0}", Model.ImagePath)" id="demo3" alt="Jcrop Example" style="width:500px; height:auto;" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions right">
+                        <a href="@Url.Action("News","Admin")" class="btn default">取消</a>
+                        <button type="submit" class="btn btn-danger">删除</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    }
+</body>
+
+</html>
+
+<script src="~/assets/js/admin/jquery.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Content/Pages/Admin/handle-form-validate.js"></script>
+

@@ -1,0 +1,63 @@
+﻿@model airtton.ViewModel.EventsEditViewModel
+
+@{
+    ViewBag.Title = "EventsDeleteConfirm";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>删除行业动态</title>
+</head>
+<body>
+    @using (Html.BeginForm("EventsDelete", "Admin", FormMethod.Post, new { @id = "newsForm" }))
+    {
+        @Html.Hidden("Id", Model.Id)
+        <h4>你确定要删除这条动态吗？</h4>
+        <div class="portlet box green col-md-11">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> 删除行业动态
+                </div>
+                <div class="tools">
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label>行业动态标题</label>
+                            <input type="text" name="Title" class="form-control input-lg" placeholder="行业动态标题" value="@Model.Title" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>行业动态内容</label>
+                            <textarea class="form-control" name="Content" placeholder="行业动态内容" rows="10" readonly>@Model.Content</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12 margin-bottom-40">
+                        <h4 class="block">图片</h4>
+                        <div class="row">
+                            <div class="col-md-6 responsive-1024">
+                                @if (Model.ImagePath == null)
+                                {
+                                    <img src="~/assets/img/portfolio/19.jpg" id="demo3" alt="Jcrop Example" style="width:500px; height:auto;" />
+                                }
+                                else
+                                {
+                                    <img src="@String.Format("/uploads/events/_0x{0}", Model.ImagePath)" id="demo3" alt="Jcrop Example" style="width:500px; height:auto;" />
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <a href="@Url.Action("Events","Admin")" class="btn default">取消</a>
+                        <button type="submit" class="btn green">删除</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</body>
+</html>
+

@@ -1,0 +1,135 @@
+﻿@model airtton.ViewModel.PresidentDetailSummaryViewModel
+
+@{
+    ViewBag.Title = "PresidentDetail";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+if (input.Length <= length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-comments"></i>总裁致辞
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="table-scrollable">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                @*<th>
+                                    编号
+                                </th>*@
+                                <th>
+                                    姓名
+                                </th>
+                                <th>
+                                    职位
+                                </th>
+                                <th>
+                                    描述
+                                </th>
+                                <th>
+                                    图片
+                                </th>
+                                <th>
+                                    Facebook
+                                </th>
+                                <th>
+                                    Twitter
+                                </th>
+                                <th>
+                                    Google
+                                </th>
+                                <th>
+                                    LinkedIn
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Skype
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                                <tr>
+                                    @*<td>@Model.ID</td>*@
+                                    <td>@Model.Name</td>
+                                    <td>@Model.Position</td>
+                                    <td>
+                                        @if (Model.Description != null && Model.Description != "")
+	                                    {
+		                                     @Truncate(Model.Description, 50)
+	                                    }
+
+                                    </td>
+                                    <td>
+                                        @if (Model.ImagePath != null)
+                                        {
+                                            <span class="fa fa-check-circle"></span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (Model.Facebook != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        @if (Model.Twitter != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        @if (Model.Google != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        @if (Model.LinkedIn != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        @if (Model.Email != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        @if (Model.Skype != null)
+                                        { <span class="fa fa-check-circle"></span> }
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("PresidentDetailEdit", "Admin", new { id=Model.ID })" class="btn btn-success">编辑</a>
+                                        @*<a href="@Url.Action("PresidentDetailDeleteConfirm", "Admin", new { id=Model.ID})" class="btn btn-danger">删除</a>*@
+
+                                </tr>
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+    </div>
+</body>
+</html>

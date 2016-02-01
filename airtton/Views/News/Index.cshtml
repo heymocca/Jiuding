@@ -1,0 +1,88 @@
+﻿@model IEnumerable<airtton.ViewModel.NewsSummaryViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">News</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li><a href="@Url.Action("Index", "News")">News</a></li>
+            <li class="active">Jiuding News</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!-- News Content -->
+<div class="container s-results margin-bottom-50 margin-top-20">
+    <div class="row">
+        <div class="col-md-2 hidden-xs related-search">
+            <div class="row">
+                <div class="col-md-12 col-sm-4">
+                    <h3>Jiuding News</h3>
+                    <ul class="list-unstyled">
+                        @foreach (var item in Model)
+                        {
+                            <li><a href="@String.Format("#{0}",item.Id)">@item.Title</a></li>
+                        }
+                    </ul>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 col-sm-4">
+                    <h3>Events</h3>
+                    <ul class="list-unstyled">
+
+                        <li><a href="@Url.Action("Events","News")">中国锻压协会副秘书长齐俊河透露</a></li>
+                        <li><a href="@Url.Action("Events","News")">我国压铸行业革新前进 发展空间巨大</a></li>
+                        <li><a href="@Url.Action("Events","News")">‎分析意大利德国等模具强国技术优势比较</a></li>
+                        <li><a href="@Url.Action("Events","News")">‎冲压模具行业的发展重点与展望</a></li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+        </div><!--/col-md-2-->
+
+        <div class="col-md-10">            
+            @foreach (var item in Model)
+            {
+                <div id="@item.Id" class="inner-results">
+                    <h3>@item.Title</h3>
+                    <div class="overflow-h">
+                        @if (item.ImagePath != null)
+                        {
+                            <img src="@String.Format("/uploads/news/_0x{0}", item.ImagePath)" alt="" style="height:280px; width:auto"/>
+                        }
+                        <p>@item.Content</p>
+                        <div class="overflow-a">
+                            <ul class="list-inline down-ul">
+                               
+                                <li>@item.CreateDate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="margin-bottom-30"></div>
+
+            <div class="text-left">
+                <ul class="pagination">
+                    <li><a href="#">«</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">157</a></li>
+                    <li><a href="#">158</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div><!--/col-md-10-->
+    </div>
+</div>
+<!-- End News Content -->

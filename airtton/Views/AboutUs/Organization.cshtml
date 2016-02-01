@@ -1,0 +1,56 @@
+﻿@model IEnumerable<airtton.ViewModel.OrganizationSummaryViewModel>
+@{
+    ViewBag.Title = "Organization";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Organization</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li><a href="@Url.Action("Organization", "AboutUs")">About Us</a></li>
+            <li class="active">Organization</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Container Part ===-->
+<div class="container content">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div id="myCarousel" class="carousel slide carousel-v1">
+                <div class="carousel-inner">
+                    @{ 
+                        int i = 0;
+                    }
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="item @(i==0?"active":"")">
+                            <img src="@item.ImageUrl" alt="">
+                        </div>
+
+                        i++;
+                    }
+                    @*<div class="item active">
+                            <img src="~/assets/img/clients1/About/Organization/organization2.jpg" alt="">
+                        </div>*@
+                </div>
+
+                <div class="carousel-arrow">
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<!--=== End Container Part ===-->

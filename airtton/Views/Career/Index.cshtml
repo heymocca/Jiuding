@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+    <div class="container">
+        <h1 class="pull-left">Career</h1>
+        <ul class="pull-right breadcrumb">
+            <li><a href="@Url.Action("Index","Home")">Home</a></li>
+            <li class="active">Career</li>
+        </ul>
+    </div>
+</div>
+<!--=== End Breadcrumbs ===-->
+
+<div class="container content">
+    <!-- Job Content -->
+    <div class="headline"><h2>Job Categories</h2></div>
+    <div class="row job-content margin-bottom-40">
+        <div class="col-md-3 col-sm-3 md-margin-bottom-40">
+            <h3 class="heading-md"><strong>Sales &amp; Marketing</strong></h3>
+            <ul class="list-unstyled categories">
+                <li><a href="#SeniorMgt">Senior Management </a> <small class="hex">(1 jobs)</small></li>
+                <li><a href="#">Market Research &amp; Surveys</a> <small class="hex">(0 jobs)</small></li>
+            </ul>
+        </div>
+        <div class="col-md-3 col-sm-3 md-margin-bottom-40">
+            <h3 class="heading-md"><strong>Technician &amp; Engineer</strong></h3>
+            <ul class="list-unstyled categories">
+                <li><a href="#SeniorEngineer">Senior Engineer</a> <small class="hex">(1 jobs)</small></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Job Content -->
+
+    <div class="headline margin-bottom-35"><h2>Highest Rated Jobs</h2></div>
+
+    <!-- Easy Blocks v1 -->
+    <div class="row high-rated margin-bottom-20">
+
+        <div class="row">
+            <!-- Begin Easy Block -->
+            <div class="col-md-3 col-sm-6 md-margin-bottom-40">
+                <div id="SeniorMgt" class="easy-block-v2">
+                    <div class="easy-bg-v2 rgba-default">New</div>
+                    <img alt="" src="~/assets/img/clients1/Career/career-1.jpg" />
+                    <h3>Senior Management</h3>
+                    <ul class="list-unstyled">
+                        <li><span class="color-green">Position:</span> Manager / Executive</li>
+                        <li><span class="color-green">Required:</span> 5 - years of experience</li>
+                        <li><span class="color-green">Gender:</span> Any</li>
+                    </ul>
+                    <a class="btn btn-u btn-u-sm" href="@Url.Action("Detail","Career")" target="_blank">View More</a>
+                </div>
+            </div>
+            <!-- End Begin Easy Block -->
+            <!-- Begin Easy Block -->
+            <div class="col-md-3 col-sm-6 md-margin-bottom-40">
+                <div id="SeniorEngineer"class="easy-block-v2">
+                    <div class="easy-bg-v2 rgba-red">New</div>
+                    <img alt="" src="~/assets/img/clients1/Career/career-2.jpg">
+                    <h3>Senior Engineer</h3>
+                    <ul class="list-unstyled">
+                        <li><span class="color-green">Position:</span> Technician / Engineer</li>
+                        <li><span class="color-green">Required:</span> 7 - years of experience</li>
+                        <li><span class="color-green">Gender:</span> Any</li>
+                    </ul>
+                    <a class="btn btn-u btn-u-sm" href="@Url.Action("Detail","Career")" target="_blank">View More</a>
+                </div>
+            </div>
+            <!-- End Begin Easy Block -->
+        </div>
+
+    </div>
+    <!-- End Easy Blocks v1 -->
+</div>
+
+
+

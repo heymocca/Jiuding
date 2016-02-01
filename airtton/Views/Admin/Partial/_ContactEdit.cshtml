@@ -1,0 +1,31 @@
+﻿@model airtton.ViewModel.ContactSummaryViewModel
+
+@Html.Hidden("contact_id", Model.ID)
+
+<div class="form-body">
+    <div class="form-group">
+        <label>地址</label>
+        <input type="text" name="Address" id="new_contact_address" class="form-control input-lg" placeholder="地址" value="@Model.Address" />
+    </div>
+    <div class="form-group">
+        <label>电话</label>
+        <input type="text" name="Phone" id="new_contact_phone" class="form-control input-lg" placeholder="电话" value="@Model.Phone" />
+    </div>
+    <div class="form-group">
+        <label>传真</label>
+        <input type="text" name="Fax" id="new_contact_fax" class="form-control input-lg" placeholder="传真" value="@Model.Fax" />
+    </div>
+    <div class="form-group">
+        <label>邮箱</label>
+        <input type="text" name="Email" id="new_contact_email" class="form-control input-lg" placeholder="邮箱" value="@Model.Email" />
+    </div>
+    <div class="form-group">
+        <label>网址</label>
+        <input type="text" name="Link" id="new_contact_link" class="form-control input-lg" placeholder="网址" value="@Model.Link" />
+    </div>
+</div>
+
+<div class="form-actions right">
+    <a href="@Url.Action("Contact","Admin")" class="btn default">取消</a>
+    <button class="btn green" id="contact_submit" data-url="@Url.Action("EditContactSubmit","Admin")">发布</button>
+</div>

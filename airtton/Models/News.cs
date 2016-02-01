@@ -76,29 +76,41 @@ namespace airtton.Models
     {
         public int ID { get; set; }
         public string JobTitle { get; set; }
+        public string CategoryName { get; set; }
         public string Location { get; set; }
         public string Experience { get; set; }
         public string Education { get; set; }
         public string WorkType { get; set; }
         public int VacancyNubmer { get; set; }
         public DateTime CreateDate { get; set; }
-        public DateTime ExpireDate { get; set; }
         public string Description { get; set; }
         public string Qualification { get; set; }
+        public int Lan { get; set; }
     }
 
-    public class JobApply
+    public class Contact
+    {
+        public int ID { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+        public string Email { get; set; }
+        public string Link { get; set; }
+    }
+
+    public class MessageInfo
     {
         public int ID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Resume { get; set; }
+        public string Content { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 
     public class NewsDBContext : DbContext
     {
         public DbSet<News> News { get; set; }
+
         public DbSet<Events> Events { get; set; }
 
         public DbSet<GroupIntro> GroupIntro { get; set; }
@@ -108,10 +120,12 @@ namespace airtton.Models
         public DbSet<Honor> Honor { get; set; }
 
         public DbSet<Organization> Organization { get; set; }
-        
+
         public DbSet<Career> Career { get; set; }
 
-        public DbSet<JobApply> JobApply { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+
+        public DbSet<MessageInfo> MessageInfo { get; set; }
 
         //public System.Data.Entity.DbSet<airtton.ViewModel.EventsEditViewModel> EventsEditViewModels { get; set; }
 
@@ -131,6 +145,12 @@ namespace airtton.Models
         public System.Data.Entity.DbSet<airtton.ViewModel.PresidentDetailSummaryViewModel> PresidentDetailSummaryViewModels { get; set; }
 
         public System.Data.Entity.DbSet<airtton.ViewModel.PresidentDetailEditViewModel> PresidentDetailEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.CareerSummaryViewModel> CareerSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.CareerEditViewModel> CareerEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.ContactSummaryViewModel> ContactSummaryViewModels { get; set; }
     }
 
 

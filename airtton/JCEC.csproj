@@ -193,7 +193,11 @@
     <Compile Include="Models\RazorViewToString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CareerEditViewModel.cs" />
+    <Compile Include="ViewModel\CareerSummaryViewModel.cs" />
+    <Compile Include="ViewModel\ContactSummaryViewModel.cs" />
     <Compile Include="ViewModel\ImageUpload.cs" />
+    <Compile Include="ViewModel\MessageInfoSummaryViewModel.cs" />
     <Compile Include="ViewModel\PresidentDetailEditViewModel.cs" />
     <Compile Include="ViewModel\UploadImageModel.cs" />
     <Compile Include="ViewModel\EventsEditViewModel.cs" />
@@ -3311,6 +3315,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Pages\Admin\edit.js" />
+    <Content Include="Content\Pages\Admin\handle-contact.js" />
     <Content Include="Content\Pages\Admin\handle-form-validate.js" />
     <Content Include="Content\Pages\Admin\handle-group-intro.js" />
     <Content Include="Content\Pages\Admin\slide-image-handle.js" />
@@ -4507,6 +4512,13 @@
     <Content Include="Views\Admin\PresidentDetail.cshtml" />
     <Content Include="Views\Admin\PresidentDetailEdit.cshtml" />
     <Content Include="Views\Admin\PresidentDetailDeleteConfirm.cshtml" />
+    <Content Include="Views\Admin\Career.cshtml" />
+    <Content Include="Views\Admin\CareerCreate.cshtml" />
+    <Content Include="Views\Admin\CareerEdit.cshtml" />
+    <Content Include="Views\Admin\CareerDeleteConfirm.cshtml" />
+    <Content Include="Views\Admin\Contact.cshtml" />
+    <Content Include="Views\Admin\Partial\_Contact.cshtml" />
+    <Content Include="Views\Admin\Partial\_ContactEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

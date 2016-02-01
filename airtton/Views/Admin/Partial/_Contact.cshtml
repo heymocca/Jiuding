@@ -1,0 +1,27 @@
+﻿@model airtton.ViewModel.ContactSummaryViewModel
+
+@Html.Hidden("contact_id", Model.ID)
+
+<div class="form-body">
+    <div class="form-group">
+        <label>地址</label>
+        <p name="Address" id="contact_address">@Model.Address</p>
+    </div>
+    <div class="form-group">
+        <label>电话</label>
+        <p name="Phone" id="contact_phone">@Model.Phone</p>
+    </div>
+    <div class="form-group">
+        <label>传真</label>
+        <p name="Fax" id="contact_fax">@Model.Fax</p>
+    </div>
+    <div class="form-group">
+        <label>邮箱</label>
+        <p name="Email" id="contact_email">@Model.Email</p>
+    </div>
+    <div class="form-group">
+        <label>公司网站</label>
+        <p name="Link" id="contact_link">@Model.Link</p>
+    </div>
+</div>
+

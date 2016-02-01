@@ -494,7 +494,274 @@ namespace airtton.Controllers
         // Organization
         #endregion
 
-        // Career
+        #region// Career
+        public ActionResult Career()
+        {
+            var career = db.Career.ToList();
+
+            List<CareerSummaryViewModel> career_sm = new List<CareerSummaryViewModel>();
+
+            foreach (var item in career)
+            {
+                CareerSummaryViewModel _career = new CareerSummaryViewModel
+                {
+                    ID = item.ID,
+                    JobTitle = item.JobTitle,
+                    CategoryName = item.CategoryName,
+                    Location = item.Location,
+                    Experience = item.Experience,
+                    Education = item.Education,
+                    WorkType = item.WorkType,
+                    VacancyNubmer = item.VacancyNubmer,
+                    CreateDate = item.CreateDate.ToString(),
+                    Description = item.Description,
+                    Qualification = item.Qualification
+                };
+                career_sm.Add(_career);
+            }
+            return View(career_sm);
+        }
+
+        public ActionResult CareerEdit(int id)
+        {
+            var careers = db.Career.SingleOrDefault(r => r.ID == id);
+
+            CareerEditViewModel _careers = new CareerEditViewModel
+            {
+                JobTitle = careers.JobTitle,
+                CategoryName = careers.CategoryName,
+                Location = careers.Location,
+                Experience = careers.Experience,
+                Education = careers.Education,
+                WorkType = careers.WorkType,
+                VacancyNubmer = careers.VacancyNubmer,
+                //CreateDate = careers.CreateDate,
+                Description = careers.Description,
+                Qualification = careers.Qualification,
+            };
+            return View(_careers);
+        }
+
+        public ActionResult CareerSubmit(CareerEditViewModel submit_career)
+        {
+            var careers = db.Career.SingleOrDefault(r => r.ID == submit_career.ID);
+
+            careers.JobTitle = submit_career.JobTitle;
+            careers.CategoryName = submit_career.CategoryName;
+            careers.Location = submit_career.Location;
+            careers.Experience = submit_career.Experience;
+            careers.Education = submit_career.Education;
+            careers.WorkType = submit_career.WorkType;
+            careers.VacancyNubmer = submit_career.VacancyNubmer;
+            careers.CreateDate = DateTime.Now;
+            careers.Description = submit_career.Description;
+            careers.Qualification = submit_career.Qualification;
+
+            db.SaveChanges();
+
+            return RedirectToAction("Career");
+        }
+
+        public ActionResult CareerCreate()
+        {
+            return View();
+        }
+
+        public ActionResult CareerCreateSubmit(CareerEditViewModel create_career)
+        {
+            Career careers = new Career
+            {
+                JobTitle = create_career.JobTitle,
+                CategoryName = create_career.CategoryName,
+                Location = create_career.Location,
+                Experience = create_career.Experience,
+                Education = create_career.Education,
+                WorkType = create_career.WorkType,
+                VacancyNubmer = create_career.VacancyNubmer,
+                CreateDate = DateTime.Now,
+                Description = create_career.Description,
+                Qualification = create_career.Qualification,
+            };
+
+            db.Career.Add(careers);
+            db.SaveChanges();
+
+            return RedirectToAction("Career");
+        }
+
+        public ActionResult CareerDeleteConfirm(int id)
+        {
+            var careers = db.Career.SingleOrDefault(r => r.ID == id);
+
+            CareerEditViewModel _career = new CareerEditViewModel
+            {
+                JobTitle = careers.JobTitle,
+                CategoryName = careers.CategoryName,
+                Location = careers.Location,
+                Experience = careers.Experience,
+                Education = careers.Education,
+                WorkType = careers.WorkType,
+                VacancyNubmer = careers.VacancyNubmer,
+                //CreateDate = careers.CreateDate,
+                Description = careers.Description,
+                Qualification = careers.Qualification,
+            };
+            return View(_career);
+        }
+
+        public ActionResult CareerDelete(CareerEditViewModel delete_career)
+        {
+            var careers = db.Career.SingleOrDefault(r => r.ID == delete_career.ID);
+
+            db.Career.Remove(careers);
+            db.SaveChanges();
+
+            return RedirectToAction("Career");
+        }
+        #endregion
+
+        #region// Contact
+        public ActionResult Contact()
+        {
+            var Contacts = db.Contact.First();
+
+            ContactSummaryViewModel _Contact = new ContactSummaryViewModel()
+            {
+                ID = Contacts.ID,
+                Address = Contacts.Address,
+                Phone = Contacts.Phone,
+                Email = Contacts.Email,
+                Fax = Contacts.Fax,
+                Link = Contacts.Link
+            };
+
+            return View(_Contact);
+        }
+
+        public ActionResult EditContact(int id, string address, string phone, string fax, string email, string link, int echo)
+        {
+
+            try
+            {
+                ContactSummaryViewModel _Contact = new ContactSummaryViewModel()
+                {
+                    ID = id,
+                    Address = address,
+                    Phone = phone,
+                    Fax = fax,
+                    Email = email,
+                    Link = link
+                };
+
+                var view_str = RazorViewToString.RenderRazorViewToString(this, "Partial/_ContactEdit", _Contact);
+
+
+                return new JsonResult()
+                {
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    Data = new { result = "success", echo = echo, html = view_str }
+                };
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult
+                {
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    Data = new { result = "fail", message = ex.Message }
+                };
+            }
+
+        }
+
+        public ActionResult EditContactSubmit(int id, string address, string phone, string fax, string email, string link, int echo)
+        {
+            var Contacts = db.Contact.Find(id);
+
+            Contacts.Address = address;
+            Contacts.Phone = phone;
+            Contacts.Fax = fax;
+            Contacts.Email = email;
+            Contacts.Link = link;
+
+            db.SaveChanges();
+
+            ContactSummaryViewModel _Contact = new ContactSummaryViewModel()
+            {
+                Address = Contacts.Address,
+                Phone = Contacts.Phone,
+                Fax = Contacts.Fax,
+                Email = Contacts.Email,
+                Link = Contacts.Link
+            };
+
+            var view_str = RazorViewToString.RenderRazorViewToString(this, "Partial/_Contact", _Contact);
+
+            try
+            {
+                return new JsonResult()
+                {
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    Data = new { result = "success", echo = echo, html = view_str }
+                };
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult()
+                {
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                    Data = new { result = "fail", message = ex.Message }
+                };
+            }
+
+        }
+        #endregion
+
+        // Message
+        public ActionResult MessageInfo()
+        {
+            var messageInfo = db.MessageInfo.ToList();
+
+            List<MessageInfoSummaryViewModel> message_sm = new List<MessageInfoSummaryViewModel>();
+
+            foreach (var item in messageInfo)
+            {
+                MessageInfoSummaryViewModel _messageInfo = new MessageInfoSummaryViewModel
+                {
+                    ID = item.ID,
+                    Name = item.Name,
+                    Email = item.Email,
+                    Content = item.Content,
+                    CreateDate = item.CreateDate.ToString()
+                };
+                message_sm.Add(_messageInfo);
+            }
+            return View(message_sm);
+        }
+
+        public ActionResult MessageDeleteConfirm(int id)
+        {
+            var MessageInfo = db.MessageInfo.Find(id);
+
+            MessageInfoSummaryViewModel messageInfo = new MessageInfoSummaryViewModel
+            {
+                Name = MessageInfo.Name,
+                Email = MessageInfo.Email,
+                Content = MessageInfo.Content,
+                CreateDate = MessageInfo.CreateDate.ToString()
+            };
+
+            return View(messageInfo);
+        }
+
+        public ActionResult MessageDelete(MessageInfoSummaryViewModel messageInfo)
+        {
+            var MessageInfo = db.MessageInfo.Find(messageInfo.ID);
+
+            db.MessageInfo.Remove(MessageInfo);
+            db.SaveChanges();
+
+            return RedirectToAction("MessageInfo");
+        }
 
     }
 }

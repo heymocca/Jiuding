@@ -1,0 +1,66 @@
+﻿@model airtton.ViewModel.CareerEditViewModel
+
+@{
+    ViewBag.Title = "CareerDeleteConfirm";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CareerDelete", "Admin", FormMethod.Post, new { @id = "careerForm", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("Id", Model.ID)
+
+    <div class="portlet box green col-md-11">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i> 编辑招聘信息
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form role="form">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label>职位</label>
+                        <input type="text" name="JobTitle" class="form-control input-lg" placeholder="职位" value="@Model.JobTitle" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>部门</label>
+                        <input type="text" name="CategoryName" class="form-control" placeholder="部门" value="@Model.CategoryName" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>工作地点</label>
+                        <input type="text" name="Location" class="form-control input-lg" placeholder="工作地点" value="@Model.Location" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>经验要求</label>
+                        <textarea name="Experience" class="form-control" rows="10" placeholder="经验要求" readonly>@Model.Experience</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>学历要求</label>
+                        <input type="text" name="Education" class="form-control input-lg" placeholder="学历要求" value="@Model.Education" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>工作类型</label>
+                        <input type="text" name="WorkType" class="form-control" placeholder="工作类型" value="@Model.WorkType" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>职位描述</label>
+                        <textarea name="Description" class="form-control input-lg" rows="10" placeholder="职位描述" readonly>@Model.Description</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>任职资格</label>
+                        <textarea name="Qualification" class="form-control" rows="10" placeholder="任职资格" readonly>@Model.Qualification</textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions right">
+                    <a href="@Url.Action("Career","Admin")" class="btn default">取消</a>
+                    <button type="submit" class="btn green">删除</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+

@@ -29,10 +29,8 @@ else {
                 <div class="caption">
                     <i class="fa fa-comments"></i>行业动态
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="@Url.Action("EventsCreate","Admin")" type="button" class="btn btn-success right">添加行业动态</a>
-                    </div>
+                <div class="actions">
+                    <a href="@Url.Action("EventsCreate","Admin")" type="button" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i>添加行业动态</a>
                 </div>
             </div>
             <div class="portlet-body">
@@ -76,14 +74,14 @@ else {
                                     <td>
                                         @if (item.ImagePath != null)
                                         {
-                                            <span class="fa fa-check-circle"></span>
+                                            <span class="fa fa-photo"></span>
                                         }
                                     </td>
                                     <td>
-                                        <a href="@Url.Action("EventsEdit", "Admin", new { id=item.Id })" class="btn btn-success">编辑</a>
-                                        <a href="@Url.Action("EventsDeleteConfirm", "Admin", new { id = item.Id })" class="btn btn-danger">删除</a>
+                                        <a href="@Url.Action("EventsEdit", "Admin", new { id=item.Id })" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+                                        <a href="@Url.Action("EventsDeleteConfirm", "Admin", new { id = item.Id })" title="删除"><i class="fa fa-times"></i></a>
 
-                                </tr>
+</tr>
                             }
                         </tbody>
                     </table>

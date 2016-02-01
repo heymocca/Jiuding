@@ -1,0 +1,75 @@
+﻿@model IEnumerable<airtton.ViewModel.MessageInfoSummaryViewModel>
+
+@{
+    ViewBag.Title = "MessageInfo";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+@helper Truncate(string input, int length)
+{
+if (input.Length <= length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+<!DOCTYPE html>
+
+<div class="col-md-12">
+    <!-- BEGIN SAMPLE TABLE PORTLET-->
+    <div class="portlet box blue">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-comments"></i>留言管理
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-scrollable">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                编号
+                            </th>
+                            <th>
+                                姓名
+                            </th>
+                            <th>
+                                邮箱
+                            </th>
+                            <th>
+                                留言内容
+                            </th>
+                            <th>
+                                留言时间
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Email</td>
+                                <td>@Truncate(item.Content, 20)</td>
+                                <td>@item.CreateDate</td>
+                                <td><a href="@Url.Action("MessageDeleteConfirm", "Admin", new { id=item.ID})" title="删除"><i class="fa fa-times"></i></a>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- END SAMPLE TABLE PORTLET-->
+</div>
+
+

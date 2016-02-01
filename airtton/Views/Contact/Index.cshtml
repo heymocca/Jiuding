@@ -1,17 +1,19 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@model airtton.ViewModel.ContactSummaryViewModel
+
+
+@{
+    ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style type="text/css">
-
     .iw_poi_content {
         color: #CC5522;
         font-size: 14px;
         font-weight: bold;
         overflow: visible;
         padding-top: 10px;
-        padding-right:10px;
+        padding-right: 10px;
         white-space: -moz-pre-wrap;
         -ms-word-wrap: break-word;
         word-wrap: break-word;
@@ -30,56 +32,56 @@
 <!--=== End Breadcrumbs ===-->
 <!--=== Content Part ===-->
 <div class="container content">
-
-
-
-
     <div class="row margin-bottom-30">
-        <div class="col-md-9 mb-margin-bottom-30">
-            <div style="width:100%;height:400px;border:#ccc solid 1px;" id="dituContent"></div><br />
-            <form action="assets/php/sky-forms-pro/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form contact-style" novalidate="novalidate">
-                <fieldset class="no-padding">
-                    <label>Name <span class="color-red">*</span></label>
-                    <div class="row sky-space-20">
-                        <div class="col-md-7 col-md-offset-0">
-                            <div>
-                                <input type="text" name="name" id="name" class="form-control">
+        @using (Html.BeginForm("MessageSubmit", "Contact", FormMethod.Post, new { @id = "messageForm", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-md-9 mb-margin-bottom-30">
+                <div style="width:100%;height:400px;border:#ccc solid 1px;" id="dituContent"></div><br />
+                <form class="sky-form contact-style" novalidate="novalidate">
+                    <fieldset class="no-padding">
+                        <label>Name <span class="color-red">*</span></label>
+                        <div class="row sky-space-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="Name" class="form-control" value="">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <label>Email <span class="color-red">*</span></label>
+                        <div class="row sky-space-20">
+                            <div class="col-md-7 col-md-offset-0">
+                                <div>
+                                    <input type="text" name="Email" class="form-control" value="">
+                                </div>
+                            </div>
+                        </div>
 
-                    <label>Email <span class="color-red">*</span></label>
-                    <div class="row sky-space-20">
-                        <div class="col-md-7 col-md-offset-0">
-                            <div>
-                                <input type="text" name="email" id="email" class="form-control">
+                        <label>Message <span class="color-red">*</span></label>
+                        <div class="row sky-space-20">
+                            <div class="col-md-11 col-md-offset-0">
+                                <div>
+                                    <textarea rows="8" name="Content" class="form-control"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <label>Message <span class="color-red">*</span></label>
-                    <div class="row sky-space-20">
-                        <div class="col-md-11 col-md-offset-0">
-                            <div>
-                                <textarea rows="8" name="message" id="message" class="form-control"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <br />
-                    <p><button type="submit" class="btn-u">Send Message</button></p>
-                </fieldset>
-            </form>
-        </div><!--/col-md-9-->
+                        <br />
+                        <p><button type="submit" class="btn-u">Send Message</button></p>
+                    </fieldset>
+                </form>
+            </div>
+        }
+        <!--/col-md-9-->
 
         <div class="col-md-3">
             <!-- Contacts -->
             <div class="headline"><h2>Contacts</h2></div>
             <ul class="list-unstyled who margin-bottom-30">
-                <li><a href="#"><i class="fa fa-home"></i> Beijing pinggu area xing xing valley road of development zone 26</a></li>
-                <li><a href="#"><i class="fa fa-envelope"></i>info@jiuding.com</a></li>
-                <li><a href="#"><i class="fa fa-phone"></i>(010)67611248</a></li>
-                <li><a href="#"><i class="fa fa-fax"></i>(010)89982134</a></li>
-                <li><a href="#"><i class="fa fa-globe"></i>http://www.jiuding-bj.com/</a></li>
+                <li><i class="fa fa-home"></i>@Model.Address</li>
+                <li><i class="fa fa-envelope"></i>@Model.Email</li>
+                <li><i class="fa fa-phone"></i>@Model.Phone</li>
+                <li><i class="fa fa-fax"></i>@Model.Fax</li>
+                <li><i class="fa fa-globe"></i>@Model.Link</li>
             </ul>
 
             <!-- Business Hours -->

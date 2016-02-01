@@ -4,14 +4,32 @@
 
 <div class="form-body">
     <div class="form-group">
-        <label>标题</label>
-        <p name="Title" id="group_intro_title">@Model.Title</p>
-    </div>
-    <div class="form-group">
-        <label>内容</label>
-        <p name="Content" id="group_intro_content">@Model.Description</p>
 
-    </div>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td>标题</td>
+            </tr>
+            <tr>
+                <td name="Title" id="group_intro_title">@Model.Title</td>
+            </tr>
+            <tr>
+                <td>内容</td>
+            </tr>
+            <tr>
+                <td name="Content" id="group_intro_content">
+                    @Model.Description
+            </td>
+        </tr>
+    </table>
+
+    @*<label>标题</label>
+            <p name="Title" id="group_intro_title">@Model.Title</p>
+        </div>
+        <div class="form-group">
+            <label>内容</label>
+            <p name="Content" id="group_intro_content">@Model.Description</p>*@
+
+</div>
 </div>
 
 

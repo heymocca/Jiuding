@@ -4519,6 +4519,8 @@
     <Content Include="Views\Admin\Contact.cshtml" />
     <Content Include="Views\Admin\Partial\_Contact.cshtml" />
     <Content Include="Views\Admin\Partial\_ContactEdit.cshtml" />
+    <Content Include="Views\Admin\MessageInfo.cshtml" />
+    <Content Include="Views\Admin\MessageDeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

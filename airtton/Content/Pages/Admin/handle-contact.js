@@ -61,11 +61,10 @@ $(document).ready(function () {
                             }
                         }
                         else {
-                            console.log(result.message)
+                            console.log(result.message);
                         }
                     });
                 });
-
 
             } else {
                 Console.log(e.message);

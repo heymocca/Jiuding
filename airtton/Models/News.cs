@@ -151,6 +151,8 @@ namespace airtton.Models
         public System.Data.Entity.DbSet<airtton.ViewModel.CareerEditViewModel> CareerEditViewModels { get; set; }
 
         public System.Data.Entity.DbSet<airtton.ViewModel.ContactSummaryViewModel> ContactSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.MessageInfoSummaryViewModel> MessageInfoSummaryViewModels { get; set; }
     }
 
 

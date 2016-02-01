@@ -1,0 +1,44 @@
+﻿@model airtton.ViewModel.MessageInfoSummaryViewModel
+
+@{
+    ViewBag.Title = "MessageDeleteConfirm";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("MessageDelete", "Admin", FormMethod.Post, new { @id = "newsForm" }))
+{
+    @Html.Hidden("Id", Model.ID)
+    <h4>你确定要删除这条留言吗？</h4>
+    <div class="portlet box green col-md-11">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i> 删除留言
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form role="form">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label>姓名</label>
+                        <input type="text" name="Name" class="form-control input-lg" value="@Model.Name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>邮箱</label>
+                        <input type="text" name="Email" class="form-control" value="@Model.Email" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>内容</label>
+                        <input type="text" name="Content" class="form-control" value="@Model.Content" readonly />
+                    </div>
+                </div>
+                <div class="form-actions right">
+                    <a href="@Url.Action("MessageInfo","Admin")" class="btn default">取消</a>
+                    <button type="submit" class="btn green">删除</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+

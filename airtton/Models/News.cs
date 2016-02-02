@@ -225,6 +225,18 @@ namespace airtton.Models
         public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionStampingSummaryViewModel> BasePrecisionStampingSummaryViewModels { get; set; }
 
         public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionStampingEditViewModel> BasePrecisionStampingEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseSheetMetalSummaryViewModel> BaseSheetMetalSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseSheetMetalEditViewModel> BaseSheetMetalEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionMachinerySummaryViewModel> BasePrecisionMachinerySummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionMachineryEditViewModel> BasePrecisionMachineryEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseMetalProductsSummaryViewModel> BaseMetalProductsSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseMetalProductsEditViewModel> BaseMetalProductsEditViewModels { get; set; }
     }
 
 

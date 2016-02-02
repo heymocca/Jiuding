@@ -1,4 +1,6 @@
-﻿@{
+﻿@model airtton.ViewModel.BaseSheetMetalSummaryViewModel
+
+@{
     ViewBag.Title = "SheetMetal";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -6,11 +8,11 @@
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">钣金加工</h1>
+        <h1 class="pull-left">@Model.Title</h1>
         <ul class="pull-right breadcrumb">
             <li><a href="@Url.Action("Index","Home")">首页</a></li>
             <li><a href="@Url.Action("SheetMetal", "Base")">生产基地</a></li>
-            <li class="active">钣金加工</li>
+            <li class="active">@Model.Title</li>
         </ul>
     </div>
 </div>
@@ -20,11 +22,7 @@
 <div class="container content">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="title-v2">钣金加工</h2>
-            <p>公司是及研制开发、生产销售、服务于一体的综合性高科技企业。公司主要从事电子设备结构设计、加工安装和销售，特别是十九英寸配套产品已形成配套系列。在邮电、银行、保险、民航、卫生、石油和教育系统得到广泛的应用.</p>
-            <p>公司具有国内外先进的钣金加工、表面喷涂、丝网印刷质量检测等先进设备40余台高学历、高职称的经验丰富的技术、质量专业人才30余名.</p>
-            <p>先进的生产设备，过硬的技术人才，一流的检测设备和严格的iso9001质量体系管理，造就了九鼎良好的产品质量和顾客信誉.</p>
-            <p>公司的经营理念：简单和谐的人际关系，忠诚感恩的为人准则、竞争进取的人生态度、齐心协力的团队精神.</p><br>
+            <p>@Model.Content</p><br>
 
         </div>
         <div class="col-md-6">

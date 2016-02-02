@@ -199,8 +199,8 @@
     <Compile Include="ViewModel\BaseChemicalProductsSummaryViewModel.cs" />
     <Compile Include="ViewModel\BaseMetalProductsEditViewModel.cs" />
     <Compile Include="ViewModel\BaseMetalProductsSummaryViewModel.cs" />
-    <Compile Include="ViewModel\BasePrecisionMachinerEditViewModel.cs" />
-    <Compile Include="ViewModel\BasePrecisionMachinerSummaryViewModel.cs" />
+    <Compile Include="ViewModel\BasePrecisionMachineryEditViewModel.cs" />
+    <Compile Include="ViewModel\BasePrecisionMachinerySummaryViewModel.cs" />
     <Compile Include="ViewModel\BasePrecisionStampingEditViewModel.cs" />
     <Compile Include="ViewModel\BasePrecisionStampingSummaryViewModel.cs" />
     <Compile Include="ViewModel\BaseSheetMetalEditViewModel.cs" />
@@ -4541,6 +4541,12 @@
     <Content Include="Views\Admin\ChemicalProductsEdit.cshtml" />
     <Content Include="Views\Admin\PrecisionStamping.cshtml" />
     <Content Include="Views\Admin\PrecisionStampingEdit.cshtml" />
+    <Content Include="Views\Admin\SheetMetal.cshtml" />
+    <Content Include="Views\Admin\SheetMetalEdit.cshtml" />
+    <Content Include="Views\Admin\PrecisionMachinery.cshtml" />
+    <Content Include="Views\Admin\PrecisionMachineryEdit.cshtml" />
+    <Content Include="Views\Admin\MetalProducts.cshtml" />
+    <Content Include="Views\Admin\MetalProductsEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

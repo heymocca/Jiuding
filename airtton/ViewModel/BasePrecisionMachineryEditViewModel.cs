@@ -5,7 +5,7 @@ using System.Web;
 
 namespace airtton.ViewModel
 {
-    public class BasePrecisionMachinerEditViewModel
+    public class BasePrecisionMachineryEditViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

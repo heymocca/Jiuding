@@ -1,4 +1,5 @@
-﻿@{
+﻿@model airtton.ViewModel.BaseMetalProductsSummaryViewModel
+@{
     ViewBag.Title = "MetalProducts";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -6,11 +7,11 @@
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">Metal Products</h1>
+        <h1 class="pull-left">@Model.Title</h1>
         <ul class="pull-right breadcrumb">
-            <li><a href="@Url.Action("Index","Home")">Home</a></li>
-            <li><a href="@Url.Action("MetalProducts", "Base")">Base</a></li>
-            <li class="active">Metal Products</li>
+            <li><a href="@Url.Action("Index","Home")">首页</a></li>
+            <li><a href="@Url.Action("MetalProducts", "Base")">基地</a></li>
+            <li class="active">@Model.Title</li>
         </ul>
     </div>
 </div>
@@ -20,11 +21,7 @@
 <div class="container content">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="title-v2">OUR PRODUCT</h2>
-            <p>Founded in June 2008.</p>
-            <p>Total Investment: RMB10million.</p>
-            <p>Non-ferrous metal gravity casting, low pressure casting and subsequent processing.</p>
-            <p>Goal: to be a top-grade metal manufacturer.</p><br>
+            <p>@Model.Content</p><br>
         </div>
         <div class="col-md-6">
             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-1.jpg" alt="">
@@ -34,27 +31,10 @@
 <!--=== End Content Part 1 ===-->
 
 <!--=== Content Part 2 ===-->
-<div class="container content">
-    <div class="row">
-        <div class="col-md-6">
-            <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-2.jpg" alt="">
-        </div>
-        <div class="col-md-6">
-            <h2 class="title-v2">OUR MANAGEMENT</h2>
-            <p>ISO9000 & ISO14001Certified.</p>
-            <p>To be certified of TS16949 and ready to be an Automotive OEM supplier.</p>
-            <p>Six Sigma Quality Management.</p>
-            <p>Current customers from domestic and Germany.</p><br>
-        </div>
-    </div>
-</div>
-<!--=== End Content Part 2 ===-->
-
-<!--=== Content Part 3 ===-->
 <div class="bg-grey">
     <div class="container content-sm">
         <div class="text-center margin-bottom-50">
-            <h2 class="title-v2 title-center">Product Introduction</h2>
+            <h2 class="title-v2 title-center">生产设备展示</h2>
         </div>
         <div class="row news-v1">
             <div class="col-md-3 md-margin-bottom-40">
@@ -64,12 +44,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-3.1.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">Kathy Reyes</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
-                            </ul>
                 </div>
             </div>
             <div class="col-md-3 md-margin-bottom-40">
@@ -79,12 +53,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-3.2.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">John Clarck</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 07</a></li>
-                            </ul>
                 </div>
             </div>
             <div class="col-md-3 md-margin-bottom-40">
@@ -94,12 +62,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-4.1.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">John Clarck</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 07</a></li>
-                            </ul>
                 </div>
             </div>
             <div class="col-md-3">
@@ -109,12 +71,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-4.2.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">Tina Kruiger</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 22</a></li>
-                            </ul>
                 </div>
             </div>
         </div>
@@ -127,12 +83,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-5.1.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">Kathy Reyes</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 14</a></li>
-                            </ul>
                 </div>
             </div>
             <div class="col-md-3 md-margin-bottom-40">
@@ -142,12 +92,6 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-5.2.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">John Clarck</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 07</a></li>
-                            </ul>
                 </div>
             </div>
             <div class="col-md-3 md-margin-bottom-40">
@@ -157,15 +101,9 @@
                             <img class="img-responsive" src="~/assets/img/clients1/Base/MetalProducts/MetalProduct-5.3.jpg" alt="">
                         </span>
                     </a>
-                            <ul class="list-inline news-v1-info no-margin-bottom">
-                                <li><span>By</span> <a href="#">John Clarck</a></li>
-                                <li>|</li>
-                                <li><i class="fa fa-clock-o"></i> July 02, 2014</li>
-                                <li class="pull-right"><a href="#"><i class="fa fa-comments-o"></i> 07</a></li>
-                            </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--=== End Content Part 3 ===-->
+<!--=== End Content Part 2 ===-->

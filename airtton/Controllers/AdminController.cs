@@ -826,6 +826,7 @@ namespace airtton.Controllers
             return RedirectToAction("AssemblyPlant");
         }
 
+
         // Base ChemicalProducts 研发大楼
 
         public ActionResult ChemicalProducts()
@@ -867,10 +868,91 @@ namespace airtton.Controllers
             return RedirectToAction("ChemicalProducts");
         }
 
-        // Base MetalProducts
+
+        // Base MetalProducts 金属制品
+
+        public ActionResult MetalProducts()
+        {
+            var metalProducts = db.MetalProducts.First();
+
+            BaseMetalProductsSummaryViewModel metalProducts_sm = new BaseMetalProductsSummaryViewModel
+            {
+                Id = metalProducts.ID,
+                Title = metalProducts.Title,
+                Content = metalProducts.Content
+            };
+
+            return View(metalProducts_sm);
+        }
+
+        public ActionResult MetalProductsEdit(int id)
+        {
+            var metalProducts = db.MetalProducts.Find(id);
+
+            BaseMetalProductsEditViewModel _metalProducts = new BaseMetalProductsEditViewModel
+            {
+                Title = metalProducts.Title,
+                Content = metalProducts.Content
+            };
+
+            return View(_metalProducts);
+        }
+
+        public ActionResult MetalProductsEditSubmit(BaseMetalProductsEditViewModel edit_MetalProducts)
+        {
+            var metalProducts = db.MetalProducts.Find(edit_MetalProducts.Id);
+
+            metalProducts.Title = edit_MetalProducts.Title;
+            metalProducts.Content = edit_MetalProducts.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("MetalProducts");
+        }
 
 
-        // Base PrecisionMachiner
+
+        // Base PrecisionMachinery 精密机械加工
+
+        public ActionResult PrecisionMachinery()
+        {
+            var precisionMachinery = db.PrecisionMachinery.First();
+
+            BasePrecisionMachinerySummaryViewModel precisionMachinery_sm = new BasePrecisionMachinerySummaryViewModel
+            {
+                Id = precisionMachinery.ID,
+                Title = precisionMachinery.Title,
+                Content = precisionMachinery.Content
+            };
+
+            return View(precisionMachinery_sm);
+        }
+
+        public ActionResult PrecisionMachineryEdit(int id)
+        {
+            var precisionMachinery = db.PrecisionMachinery.Find(id);
+
+            BasePrecisionMachineryEditViewModel _precisionMachinery = new BasePrecisionMachineryEditViewModel
+            {
+                Title = precisionMachinery.Title,
+                Content = precisionMachinery.Content
+            };
+
+            return View(_precisionMachinery);
+        }
+
+        public ActionResult PrecisionMachineryEditSubmit(BasePrecisionMachineryEditViewModel edit_PrecisionMachinery)
+        {
+            var precisionMachinery = db.PrecisionMachinery.Find(edit_PrecisionMachinery.Id);
+
+            precisionMachinery.Title = edit_PrecisionMachinery.Title;
+            precisionMachinery.Content = edit_PrecisionMachinery.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("PrecisionMachinery");
+        }
+
 
         // Base PrecisionStamping 冲压车间
 
@@ -913,7 +995,46 @@ namespace airtton.Controllers
             return RedirectToAction("PrecisionStamping");
         }
 
-        // Base SheetMetal
+        // Base SheetMetal 钣金加工
+
+        public ActionResult SheetMetal()
+        {
+            var sheetMetal = db.SheetMetal.First();
+
+            BaseSheetMetalSummaryViewModel sheetMetal_sm = new BaseSheetMetalSummaryViewModel
+            {
+                Id = sheetMetal.ID,
+                Title = sheetMetal.Title,
+                Content = sheetMetal.Content
+            };
+
+            return View(sheetMetal_sm);
+        }
+
+        public ActionResult SheetMetalEdit(int id)
+        {
+            var sheetMetal = db.SheetMetal.Find(id);
+
+            BaseSheetMetalEditViewModel _sheetMetal = new BaseSheetMetalEditViewModel
+            {
+                Title = sheetMetal.Title,
+                Content = sheetMetal.Content
+            };
+
+            return View(_sheetMetal);
+        }
+
+        public ActionResult SheetMetalEditSubmit(BaseSheetMetalEditViewModel edit_SheetMetal)
+        {
+            var sheetMetal = db.SheetMetal.Find(edit_SheetMetal.Id);
+
+            sheetMetal.Title = edit_SheetMetal.Title;
+            sheetMetal.Content = edit_SheetMetal.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("SheetMetal");
+        }
 
         #endregion
     }

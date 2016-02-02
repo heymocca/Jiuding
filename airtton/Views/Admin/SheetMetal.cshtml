@@ -1,7 +1,7 @@
-﻿@model airtton.ViewModel.BasePrecisionStampingSummaryViewModel
+﻿@model airtton.ViewModel.BaseSheetMetalSummaryViewModel
 
 @{
-    ViewBag.Title = "PrecisionStamping";
+    ViewBag.Title = "SheetMetal";
     Layout = "~/Views/Admin/Shared/_Layout.cshtml";
 }
 
@@ -23,7 +23,7 @@ else {
     <div class="portlet box blue">
         <div class="portlet-title">
             <div class="caption">
-                <i class="fa fa-comments"></i>冲压车间
+                <i class="fa fa-comments"></i>钣金加工
             </div>
         </div>
         <div class="portlet-body">
@@ -57,7 +57,7 @@ else {
                                 }
                             </td>
                             <td>
-                                <a href="@Url.Action("PrecisionStampingEdit", "Admin", new { id=Model.Id })" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
+                                <a href="@Url.Action("SheetMetalEdit", "Admin", new { id=Model.Id })" title="编辑"><i class="fa fa-pencil-square-o"></i></a>
 
                         </tr>
                     </tbody>
@@ -67,7 +67,5 @@ else {
     </div>
     <!-- END SAMPLE TABLE PORTLET-->
 </div>
-
-
 
 

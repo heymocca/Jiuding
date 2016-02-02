@@ -1,4 +1,5 @@
-﻿@{
+﻿@model airtton.ViewModel.BasePrecisionMachinerySummaryViewModel
+@{
     ViewBag.Title = "PrecisionMachinery";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -6,11 +7,11 @@
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">精密机械加工</h1>
+        <h1 class="pull-left">@Model.Title</h1>
         <ul class="pull-right breadcrumb">
             <li><a href="@Url.Action("Index","Home")">首页</a></li>
             <li><a href="@Url.Action("PrecisionMachinery", "Base")">生产基地</a></li>
-            <li class="active">精密机械加工</li>
+            <li class="active">@Model.Title</li>
         </ul>
     </div>
 </div>
@@ -20,10 +21,7 @@
 <div class="container content">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="title-v2">精密机械加工</h2>
-            <p>北京九鼎通信设备有限公司精密制造厂，主要对外从事各种非标准机械零件加工、不锈钢零件加工、铜铝及非金属材料机械零件的加工。我厂投巨资相继从韩国、日本及国内大机床生产公司，购置进口高精密数控车床、数控铣床、立式加工中心、钻削中心、车削中心、电火花、线切割等先进设备30余台，投影仪、三坐标、高度仪、硬度计等检测设备10余台.</p>
-            <p>先进的管理模式、优良的加工设备、精密的检测设备、高级的技术人才、可信的产品质量，使我厂达到了军品加工的认证资格。同时我厂还生产各种模具、汽车及TFT液晶显示等零配件.</p>
-            <p>我厂是一个充满活力、蓬勃向上、精通业务的优秀团体。我们将坚持顾客至上，质量第一为原则，竭诚为广大客户服务，价格是我们同客户沟通的桥梁，质量是我们对客户保证的根基。客户对我们的信任，便是我们对您的承诺。本着为客户取得最大的经济效益和创造更多的社会效益，我们将力求不断创新，与您共创辉煌</p><br>
+            <p>@Model.Content</p><br>
 
         </div>
         <div class="col-md-6">

@@ -1,12 +1,12 @@
-﻿@model airtton.ViewModel.BaseChemicalProductsEditViewModel
+﻿@model airtton.ViewModel.BaseSheetMetalEditViewModel
 
 @{
-    ViewBag.Title = "ChemicalProductsEdit";
+    ViewBag.Title = "SheetMetalEdit";
     Layout = "~/Views/Admin/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
-@using (Html.BeginForm("ChemicalProductsEditSubmit", "Admin", FormMethod.Post, new { @id = "ChemicalProductsForm", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("SheetMetalEditSubmit", "Admin", FormMethod.Post, new { @id = "SheetMetalForm", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.Hidden("Id", Model.Id)
@@ -37,10 +37,11 @@
 
 
                 <div class="form-actions right">
-                    <a href="@Url.Action("ChemicalProducts","Admin")" class="btn default">取消</a>
+                    <a href="@Url.Action("SheetMetal","Admin")" class="btn default">取消</a>
                     <button type="submit" class="btn green">发布</button>
                 </div>
             </form>
         </div>
     </div>
 }
+

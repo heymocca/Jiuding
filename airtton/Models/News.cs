@@ -217,6 +217,14 @@ namespace airtton.Models
         public System.Data.Entity.DbSet<airtton.ViewModel.BaseAssemblyPlantSummaryViewModel> BaseAssemblyPlantSummaryViewModels { get; set; }
 
         public System.Data.Entity.DbSet<airtton.ViewModel.BaseAssemblyPlantEditViewModel> BaseAssemblyPlantEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseChemicalProductsSummaryViewModel> BaseChemicalProductsSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseChemicalProductsEditViewModel> BaseChemicalProductsEditViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionStampingSummaryViewModel> BasePrecisionStampingSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BasePrecisionStampingEditViewModel> BasePrecisionStampingEditViewModels { get; set; }
     }
 
 

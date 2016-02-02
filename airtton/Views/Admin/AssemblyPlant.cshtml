@@ -5,18 +5,6 @@
     Layout = "~/Views/Admin/Shared/_Layout.cshtml";
 }
 
-@helper Truncate(string input, int length)
-{
-if (input.Length <= length)
-{
-        @input
-}
-else
-{
-        @input.Substring(0, length)<text>...</text>
-}
-}
-
 <!DOCTYPE html>
 
     <div class="col-md-12">

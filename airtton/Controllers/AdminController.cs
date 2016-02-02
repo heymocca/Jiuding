@@ -766,7 +766,7 @@ namespace airtton.Controllers
 
         #region //Base
 
-        // Base AssemblyPlant
+        // Base AssemblyPlant 组装车间
 
         public ActionResult AssemblyPlant()
         {
@@ -782,24 +782,24 @@ namespace airtton.Controllers
             return View(assemblyPlant_sm);
         }
 
-        public ActionResult AssemblyPlantCreate()
-        {
-            return View();
-        }
+        //public ActionResult AssemblyPlantCreate()
+        //{
+        //    return View();
+        //}
 
-        public ActionResult AssemblyPlantCreateSubmit(BaseAssemblyPlantEditViewModel create_AssemblyPlant)
-        {
-            AssemblyPlant assemblyPlant = new AssemblyPlant
-            {
-                Title = create_AssemblyPlant.Title,
-                Content = create_AssemblyPlant.Content
-            };
+        //public ActionResult AssemblyPlantCreateSubmit(BaseAssemblyPlantEditViewModel create_AssemblyPlant)
+        //{
+        //    AssemblyPlant assemblyPlant = new AssemblyPlant
+        //    {
+        //        Title = create_AssemblyPlant.Title,
+        //        Content = create_AssemblyPlant.Content
+        //    };
 
-            db.AssemblyPlant.Add(assemblyPlant);
-            db.SaveChanges();
+        //    db.AssemblyPlant.Add(assemblyPlant);
+        //    db.SaveChanges();
 
-            return RedirectToAction("AssemblyPlant");
-        }
+        //    return RedirectToAction("AssemblyPlant");
+        //}
 
         public ActionResult AssemblyPlantEdit(int id)
         {
@@ -826,13 +826,92 @@ namespace airtton.Controllers
             return RedirectToAction("AssemblyPlant");
         }
 
-        // Base ChemicalProducts
+        // Base ChemicalProducts 研发大楼
+
+        public ActionResult ChemicalProducts()
+        {
+            var chemicalProducts = db.ChemicalProducts.First();
+
+            BaseChemicalProductsSummaryViewModel chemicalProducts_sm = new BaseChemicalProductsSummaryViewModel
+            {
+                Id = chemicalProducts.ID,
+                Title = chemicalProducts.Title,
+                Content = chemicalProducts.Content
+            };
+
+            return View(chemicalProducts_sm);
+        }
+
+        public ActionResult ChemicalProductsEdit(int id)
+        {
+            var chemicalProducts = db.ChemicalProducts.Find(id);
+
+            BaseChemicalProductsEditViewModel _chemicalProducts = new BaseChemicalProductsEditViewModel
+            {
+                Title = chemicalProducts.Title,
+                Content = chemicalProducts.Content
+            };
+
+            return View(_chemicalProducts);
+        }
+
+        public ActionResult ChemicalProductsEditSubmit(BaseAssemblyPlantEditViewModel edit_ChemicalProducts)
+        {
+            var chemicalProducts = db.ChemicalProducts.Find(edit_ChemicalProducts.Id);
+
+            chemicalProducts.Title = edit_ChemicalProducts.Title;
+            chemicalProducts.Content = edit_ChemicalProducts.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("ChemicalProducts");
+        }
 
         // Base MetalProducts
 
+
         // Base PrecisionMachiner
 
-        // Base PrecisionStamping
+        // Base PrecisionStamping 冲压车间
+
+        public ActionResult PrecisionStamping()
+        {
+            var precisionStamping = db.PrecisionStamping.First();
+
+            BasePrecisionStampingSummaryViewModel precisionStamping_sm = new BasePrecisionStampingSummaryViewModel
+            {
+                Id = precisionStamping.ID,
+                Title = precisionStamping.Title,
+                Content = precisionStamping.Content
+            };
+
+            return View(precisionStamping_sm);
+        }
+
+        public ActionResult PrecisionStampingEdit(int id)
+        {
+            var precisionStamping = db.PrecisionStamping.Find(id);
+
+            BasePrecisionStampingEditViewModel _precisionStamping = new BasePrecisionStampingEditViewModel
+            {
+                Title = precisionStamping.Title,
+                Content = precisionStamping.Content
+            };
+
+            return View(_precisionStamping);
+        }
+
+        public ActionResult PrecisionStampingEditSubmit(BasePrecisionStampingEditViewModel edit_PrecisionStamping)
+        {
+            var precisionStamping = db.PrecisionStamping.Find(edit_PrecisionStamping.Id);
+
+            precisionStamping.Title = edit_PrecisionStamping.Title;
+            precisionStamping.Content = edit_PrecisionStamping.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("PrecisionStamping");
+        }
 
         // Base SheetMetal
 

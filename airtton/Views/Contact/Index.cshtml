@@ -22,10 +22,10 @@
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">Contact Us</h1>
+        <h1 class="pull-left">联系我们</h1>
         <ul class="pull-right breadcrumb">
-            <li><a href="@Url.Action("Index","Home")">Home</a></li>
-            <li class="active">Contact Us</li>
+            <li><a href="@Url.Action("Index","Home")">首页</a></li>
+            <li class="active">联系我们</li>
         </ul>
     </div>
 </div>
@@ -40,7 +40,7 @@
                 <div style="width:100%;height:400px;border:#ccc solid 1px;" id="dituContent"></div><br />
                 <form class="sky-form contact-style" novalidate="novalidate">
                     <fieldset class="no-padding">
-                        <label>Name <span class="color-red">*</span></label>
+                        <label>姓名 <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </div>
-                        <label>Email <span class="color-red">*</span></label>
+                        <label>邮箱 <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
 
-                        <label>Message <span class="color-red">*</span></label>
+                        <label>留言内容 <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-11 col-md-offset-0">
                                 <div>
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <br />
-                        <p><button type="submit" class="btn-u">Send Message</button></p>
+                        <p><button type="submit" class="btn-u">发送</button></p>
                     </fieldset>
                 </form>
             </div>
@@ -75,7 +75,7 @@
 
         <div class="col-md-3">
             <!-- Contacts -->
-            <div class="headline"><h2>Contacts</h2></div>
+            <div class="headline"><h2>联系方式</h2></div>
             <ul class="list-unstyled who margin-bottom-30">
                 <li><i class="fa fa-home"></i>@Model.Address</li>
                 <li><i class="fa fa-envelope"></i>@Model.Email</li>
@@ -85,11 +85,11 @@
             </ul>
 
             <!-- Business Hours -->
-            <div class="headline"><h2>Business Hours</h2></div>
+            <div class="headline"><h2>工作时间</h2></div>
             <ul class="list-unstyled margin-bottom-30">
-                <li><strong>Monday-Friday:</strong> 9am to 6pm</li>
-                <li><strong>Saturday:</strong> 11am to 3pm</li>
-                <li><strong>Sunday:</strong> Closed</li>
+                <li><strong>星期一至星期五:</strong> 9：00 - 18：00</li>
+                <li><strong>星期六:</strong> 11：00 - 15：00</li>
+                <li><strong>星期日:</strong> 休息</li>
             </ul>
         </div><!--/col-md-3-->
     </div><!--/row-->
@@ -135,7 +135,7 @@
     }
 
     //标注点数组
-    var markerArr = [{ title: "", content: "Welcome to Jiuding Communication", point: "117.139179|40.168169", isOpen: 1, icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 } }
+    var markerArr = [{ title: "", content: "北京九鼎通信设备有限公司", point: "117.139179|40.168169", isOpen: 1, icon: { w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12 } }
     ];
     //创建marker
     function addMarker() {

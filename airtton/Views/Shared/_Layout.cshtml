@@ -71,18 +71,16 @@
                     <!-- Topbar -->
                     <div class="topbar">
                         <ul class="loginbar pull-right">
-                            <li><a href="@Url.Action("Index","Home")">Home</a></li>
-                            <li class="topbar-devider"></li>
-                            <li><a href="#">Add to favoriate</a></li>
+                            <li><a href="@Url.Action("Index","Home")">首页</a></li>
                             <li class="topbar-devider"></li>
                             <li class="hoverSelector" style="background-color:">
                                 <i class="fa fa-globe"></i>
-                                <a>Language</a>
+                                <a>语言</a>
                                 <ul class="languages hoverSelectorBlock">
                                     <li class="active">
-                                        <a href="@Url.Action("Index","Home")">English <i class="fa fa-check"></i></a>
+                                        <a href="@Url.Action("Index","Home")">中文 <i class="fa fa-check"></i></a>
                                     </li>
-                                    <li><a href="#">Chinese</a></li>
+                                    <li><a href="#">英文</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -103,7 +101,7 @@
                             <!-- Home -->
                             <li>
                                 <a href="@Url.Action("Index","Home")">
-                                    Home
+                                    首页
                                 </a>
                             </li>
                             <!-- End Home -->
@@ -112,13 +110,13 @@
                             <!-- About Pages -->
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                    About Us
+                                    走进九鼎
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("GroupIntro","AboutUs")">Group Introduction</a></li>
-                                    <li><a href="@Url.Action("PresidentDetail", "AboutUs")">Message from the President</a></li>
-                                    <li><a href="@Url.Action("Honor","AboutUs")">Jiuding Honor</a></li>
-                                    <li><a href="@Url.Action("Organization","AboutUs")">Organization</a></li>
+                                    <li><a href="@Url.Action("GroupIntro","AboutUs")">公司介绍</a></li>
+                                    <li><a href="@Url.Action("PresidentDetail", "AboutUs")">总裁致辞</a></li>
+                                    <li><a href="@Url.Action("Honor","AboutUs")">九鼎荣誉</a></li>
+                                    <li><a href="@Url.Action("Organization","AboutUs")">组织结构</a></li>
                                 </ul>
                             </li>
                             <!-- End About Pages -->
@@ -126,11 +124,11 @@
                             <!-- News -->
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                    News
+                                    新闻动态
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("Index", "News")">News</a></li>
-                                    <li><a href="@Url.Action("Events", "News")">Event</a></li>
+                                    <li><a href="@Url.Action("Index", "News")">九鼎新闻</a></li>
+                                    <li><a href="@Url.Action("Events", "News")">行业动态</a></li>
                                 </ul>
                             </li>
                             <!-- End News -->
@@ -138,7 +136,7 @@
                             <!-- Product -->
                             <li>
                                 <a href="@Url.Action("Index","Products")">
-                                    Products
+                                    产品中心
                                 </a>
                             </li>
                             <!-- End Product -->
@@ -146,15 +144,15 @@
                             <!-- Base -->
                             <li class="dropdown">
                                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                    Base
+                                    生产基地
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="@Url.Action("SheetMetal", "Base")">Sheet-Metal</a></li>
-                                    <li><a href="@Url.Action("PrecisionStamping", "Base")">Precision stamping workshop</a></li>
-                                    <li><a href="@Url.Action("PrecisionMachinery", "Base")">Precision Machinery Machining</a></li>
-                                    <li><a href="@Url.Action("MetalProducts", "Base")">Metal Products</a></li>
-                                    <li><a href="@Url.Action("AssemblyPlant", "Base")">Assembly plant</a></li>
-                                    <li><a href="@Url.Action("ChemicalProducts", "Base")">Chemical Products</a></li>
+                                    <li><a href="@Url.Action("PrecisionStamping", "Base")">冲压车间</a></li>
+                                    <li><a href="@Url.Action("SheetMetal", "Base")">钣金加工</a></li>
+                                    <li><a href="@Url.Action("PrecisionMachinery", "Base")">精密机械加工</a></li>
+                                    <li><a href="@Url.Action("MetalProducts", "Base")">金属制品</a></li>
+                                    <li><a href="@Url.Action("AssemblyPlant", "Base")">组装车间</a></li>
+                                    <li><a href="@Url.Action("ChemicalProducts", "Base")">研发大楼</a></li>
                                 </ul>
                             </li>
                             <!-- End Base -->
@@ -162,7 +160,7 @@
                             <!-- Case -->
                             <li>
                                 <a href="@Url.Action("Index", "Case")">
-                                    Case
+                                    成功案例
                                 </a>
                             </li>
                             <!-- End Case -->
@@ -170,7 +168,7 @@
                             <!-- Career -->
                             <li>
                                 <a href="@Url.Action("Index","Career")">
-                                    Career
+                                    人才招聘
                                 </a>
                             </li>
                             <!-- End Career -->
@@ -178,7 +176,7 @@
                             <!-- Contact Us -->
                             <li >
                                 <a href="@Url.Action("Index","Contact")">
-                                    Contact Us
+                                    联系我们
                                 </a>
                             </li>
                             <!-- End Contact Us -->
@@ -223,25 +221,24 @@
                             <!-- End About -->
                             <!-- Latest -->
                             <div class="col-md-4 md-margin-bottom-40">
-                                <div class="headline"><h2>Useful Links</h2></div>
+                                <div class="headline"><h2>相关链接</h2></div>
                                 <ul class="list-unstyled link-list">
-                                    <li><a href="@Url.Action("GroupIntro", "AboutUs")">About Us</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="@Url.Action("Index","News")">News</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="@Url.Action("Index", "Products")">Products</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="@Url.Action("Index","Case")">Case</a><i class="fa fa-angle-right"></i></li>
-                                    <li><a href="@Url.Action("Index", "Career")">Career</a><i class="fa fa-angle-right"></i></li>
+                                    <li><a href="@Url.Action("GroupIntro", "AboutUs")">关于我们</a><i class="fa fa-angle-right"></i></li>
+                                    <li><a href="@Url.Action("Index","News")">新闻动态</a><i class="fa fa-angle-right"></i></li>
+                                    <li><a href="@Url.Action("Index", "Products")">产品介绍</a><i class="fa fa-angle-right"></i></li>
+                                    <li><a href="@Url.Action("Index","Case")">成功案例</a><i class="fa fa-angle-right"></i></li>
+                                    <li><a href="@Url.Action("Index", "Career")">人才招聘</a><i class="fa fa-angle-right"></i></li>
                                 </ul>
                             </div><!--/col-md-3-->
                             <!-- End Latest -->
                             <!-- Address -->
                             <div class="col-md-5 map-img md-margin-bottom-40">
-                                <div class="headline"><h2>Contact Us</h2></div>
+                                <div class="headline"><h2>联系我们</h2></div>
                                 <address class="md-margin-bottom-40">
-                                    No.26 Zone,Xing Xing Valley Road<br>
-                                    Pinggu District, Beijing
-                                    Phone.: (010)67611248 <br>
-                                    Fax: (010)89982134 <br>
-                                    Email: <a class="" href="mailto:info@anybiz.com">info@jiuding-bj.com</a>
+                                    北京市平谷区兴谷开发区兴谷路26号<br>
+                                    电话.: (010)67611248 <br>
+                                    传真: (010)89982134 <br>
+                                    邮箱: <a class="" href="mailto:info@anybiz.com">info@jiuding-bj.com</a>
                                 </address>
                             </div><!--/col-md-3-->
                             <!-- End Address -->

@@ -8,11 +8,11 @@
 <!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">News</h1>
+        <h1 class="pull-left">新闻动态</h1>
         <ul class="pull-right breadcrumb">
-            <li><a href="@Url.Action("Index","Home")">Home</a></li>
-            <li><a href="@Url.Action("Index", "News")">News</a></li>
-            <li class="active">Jiuding News</li>
+            <li><a href="@Url.Action("Index","Home")">首页</a></li>
+            <li><a href="@Url.Action("Index", "News")">新闻动态</a></li>
+            <li class="active">九鼎新闻</li>
         </ul>
     </div>
 </div>
@@ -23,7 +23,7 @@
         <div class="col-md-2 hidden-xs related-search">
             <div class="row">
                 <div class="col-md-12 col-sm-4">
-                    <h3>Jiuding News</h3>
+                    <h3>九鼎新闻</h3>
                     <ul class="list-unstyled">
                         @foreach (var item in Model)
                         {
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="col-md-12 col-sm-4">
-                    <h3>Events</h3>
+                    <h3>行业动态</h3>
                     <ul class="list-unstyled">
 
                         <li><a href="@Url.Action("Events","News")">中国锻压协会副秘书长齐俊河透露</a></li>
@@ -70,7 +70,7 @@
 
             <div class="margin-bottom-30"></div>
 
-            <div class="text-left">
+            @*<div class="text-left">
                 <ul class="pagination">
                     <li><a href="#">«</a></li>
                     <li class="active"><a href="#">1</a></li>
@@ -81,7 +81,7 @@
                     <li><a href="#">158</a></li>
                     <li><a href="#">»</a></li>
                 </ul>
-            </div>
+            </div>*@
         </div><!--/col-md-10-->
     </div>
 </div>

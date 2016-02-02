@@ -507,7 +507,7 @@ namespace airtton.Controllers
                 {
                     ID = item.ID,
                     JobTitle = item.JobTitle,
-                    CategoryName = item.CategoryName,
+                    //CategoryName = item.CategoryName,
                     Location = item.Location,
                     Experience = item.Experience,
                     Education = item.Education,
@@ -529,7 +529,7 @@ namespace airtton.Controllers
             CareerEditViewModel _careers = new CareerEditViewModel
             {
                 JobTitle = careers.JobTitle,
-                CategoryName = careers.CategoryName,
+                //CategoryName = careers.CategoryName,
                 Location = careers.Location,
                 Experience = careers.Experience,
                 Education = careers.Education,
@@ -547,7 +547,7 @@ namespace airtton.Controllers
             var careers = db.Career.SingleOrDefault(r => r.ID == submit_career.ID);
 
             careers.JobTitle = submit_career.JobTitle;
-            careers.CategoryName = submit_career.CategoryName;
+            //careers.CategoryName = submit_career.CategoryName;
             careers.Location = submit_career.Location;
             careers.Experience = submit_career.Experience;
             careers.Education = submit_career.Education;
@@ -572,7 +572,7 @@ namespace airtton.Controllers
             Career careers = new Career
             {
                 JobTitle = create_career.JobTitle,
-                CategoryName = create_career.CategoryName,
+                //CategoryName = create_career.CategoryName,
                 Location = create_career.Location,
                 Experience = create_career.Experience,
                 Education = create_career.Education,
@@ -596,7 +596,7 @@ namespace airtton.Controllers
             CareerEditViewModel _career = new CareerEditViewModel
             {
                 JobTitle = careers.JobTitle,
-                CategoryName = careers.CategoryName,
+                //CategoryName = careers.CategoryName,
                 Location = careers.Location,
                 Experience = careers.Experience,
                 Education = careers.Education,
@@ -764,7 +764,7 @@ namespace airtton.Controllers
         }
         #endregion
 
-        #region //Base
+        #region // Base
 
         // Base AssemblyPlant 组装车间
 

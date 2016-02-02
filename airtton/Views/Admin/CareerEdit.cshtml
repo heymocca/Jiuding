@@ -16,7 +16,7 @@
     @Html.AntiForgeryToken()
     @Html.Hidden("Id", Model.ID)
 
-    <div class="portlet box green col-md-11">
+    <div class="portlet box blue col-md-11">
         <div class="portlet-title">
             <div class="caption">
                 <i class="fa fa-gift"></i> 编辑招聘信息
@@ -32,8 +32,8 @@
                         <input type="text" name="JobTitle" class="form-control input-lg" placeholder="职位" value="@Model.JobTitle" />
                     </div>
                     <div class="form-group">
-                        <label>部门</label>
-                        <input type="text" name="CategoryName" class="form-control" placeholder="部门" value="@Model.CategoryName">
+                        <label>人数</label>
+                        <input type="text" name="VacancyNubmer" class="form-control" placeholder="人数" value="@Model.VacancyNubmer">
                     </div>
                     <div class="form-group">
                         <label>工作地点</label>

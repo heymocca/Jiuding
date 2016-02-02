@@ -107,6 +107,54 @@ namespace airtton.Models
         public DateTime CreateDate { get; set; }
     }
 
+    public class ChemicalProducts
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public class AssemblyPlant
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public class MetalProducts
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public class PrecisionMachinery
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public class PrecisionStamping
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public class SheetMetal
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
     public class NewsDBContext : DbContext
     {
         public DbSet<News> News { get; set; }
@@ -126,6 +174,18 @@ namespace airtton.Models
         public DbSet<Contact> Contact { get; set; }
 
         public DbSet<MessageInfo> MessageInfo { get; set; }
+
+        public DbSet<ChemicalProducts> ChemicalProducts { get; set; }
+
+        public DbSet<AssemblyPlant> AssemblyPlant { get; set; }
+
+        public DbSet<MetalProducts> MetalProducts { get; set; }
+
+        public DbSet<PrecisionMachinery> PrecisionMachinery { get; set; }
+
+        public DbSet<PrecisionStamping> PrecisionStamping { get; set; }
+
+        public DbSet<SheetMetal> SheetMetal { get; set; }
 
         //public System.Data.Entity.DbSet<airtton.ViewModel.EventsEditViewModel> EventsEditViewModels { get; set; }
 
@@ -153,6 +213,10 @@ namespace airtton.Models
         public System.Data.Entity.DbSet<airtton.ViewModel.ContactSummaryViewModel> ContactSummaryViewModels { get; set; }
 
         public System.Data.Entity.DbSet<airtton.ViewModel.MessageInfoSummaryViewModel> MessageInfoSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseAssemblyPlantSummaryViewModel> BaseAssemblyPlantSummaryViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<airtton.ViewModel.BaseAssemblyPlantEditViewModel> BaseAssemblyPlantEditViewModels { get; set; }
     }
 
 

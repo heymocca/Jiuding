@@ -716,7 +716,7 @@ namespace airtton.Controllers
         }
         #endregion
 
-        // Message
+        #region// Message
         public ActionResult MessageInfo()
         {
             var messageInfo = db.MessageInfo.ToList();
@@ -762,6 +762,80 @@ namespace airtton.Controllers
 
             return RedirectToAction("MessageInfo");
         }
+        #endregion
 
+        #region //Base
+
+        // Base AssemblyPlant
+
+        public ActionResult AssemblyPlant()
+        {
+            var assemblyPlant = db.AssemblyPlant.First();
+
+            BaseAssemblyPlantSummaryViewModel assemblyPlant_sm = new BaseAssemblyPlantSummaryViewModel
+            {
+                Id = assemblyPlant.ID,
+                Title = assemblyPlant.Title,
+                Content = assemblyPlant.Content
+            };
+
+            return View(assemblyPlant_sm);
+        }
+
+        public ActionResult AssemblyPlantCreate()
+        {
+            return View();
+        }
+
+        public ActionResult AssemblyPlantCreateSubmit(BaseAssemblyPlantEditViewModel create_AssemblyPlant)
+        {
+            AssemblyPlant assemblyPlant = new AssemblyPlant
+            {
+                Title = create_AssemblyPlant.Title,
+                Content = create_AssemblyPlant.Content
+            };
+
+            db.AssemblyPlant.Add(assemblyPlant);
+            db.SaveChanges();
+
+            return RedirectToAction("AssemblyPlant");
+        }
+
+        public ActionResult AssemblyPlantEdit(int id)
+        {
+            var assemblyPlant = db.AssemblyPlant.Find(id);
+
+            BaseAssemblyPlantEditViewModel _assemblyPlant = new BaseAssemblyPlantEditViewModel
+            {
+                Title = assemblyPlant.Title,
+                Content = assemblyPlant.Content
+            };
+
+            return View(_assemblyPlant);
+        }
+
+        public ActionResult AssemblyPlantEditSubmit(BaseAssemblyPlantEditViewModel edit_AssemblyPlant)
+        {
+            var assemblyPlant = db.AssemblyPlant.Find(edit_AssemblyPlant.Id);
+
+            assemblyPlant.Title = edit_AssemblyPlant.Title;
+            assemblyPlant.Content = edit_AssemblyPlant.Content;
+
+            db.SaveChanges();
+
+            return RedirectToAction("AssemblyPlant");
+        }
+
+        // Base ChemicalProducts
+
+        // Base MetalProducts
+
+        // Base PrecisionMachiner
+
+        // Base PrecisionStamping
+
+        // Base SheetMetal
+
+        #endregion
     }
 }

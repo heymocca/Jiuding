@@ -8,13 +8,6 @@
 }
 
 <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>编辑总裁致辞</title>
-</head>
-<body>
     @using (Html.BeginForm("PresidentDetailSubmit", "Admin", FormMethod.Post, new { @id = "presidentForm", enctype = "multipart/form-data" }))
     {
       @Html.AntiForgeryToken()
@@ -82,8 +75,6 @@
             </div>
         </div>
     }
-</body>
-</html>
 
 <script src="~/assets/js/admin/jquery.min.js" type="text/javascript"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

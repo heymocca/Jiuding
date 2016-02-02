@@ -1,0 +1,47 @@
+﻿@model airtton.ViewModel.BaseAssemblyPlantEditViewModel
+
+@{
+    ViewBag.Title = "AssemblyPlantEdit";
+    Layout = "~/Views/Admin/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+@using (Html.BeginForm("AssemblyPlantEditSubmit", "Admin", FormMethod.Post, new { @id = "AssemblyPlantForm", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("Id", Model.Id)
+
+    <div class="portlet box blue col-md-11">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i> 编辑
+            </div>
+            <div class="tools">
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <form role="form">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label>标题</label>
+                        <input type="text" name="Title" class="form-control input-lg" placeholder="标题" value="@Model.Title" />
+                    </div>
+                    <div class="form-group">
+                        <label>内容</label>
+                        <input type="text" name="Content" class="form-control input-lg" placeholder="内容" value="@Model.Content" />
+                    </div>
+                </div>
+
+                <!--UPLOAD IMAGE START-->
+                <!--UPLOAD IMAGE END-->
+
+
+                <div class="form-actions right">
+                    <a href="@Url.Action("AssemblyPlant","Admin")" class="btn default">取消</a>
+                    <button type="submit" class="btn green">发布</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
